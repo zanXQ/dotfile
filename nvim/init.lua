@@ -20,6 +20,8 @@ require('lazy').setup({
    require('plugins.bufferline'),
    require('plugins.lualine'),
    require('plugins.telescope'),
+   require('plugins.lsp'),
+   require('plugins.autocompletion'),
 })
 
 vim.cmd.colorscheme "catppuccin-macchiato"
