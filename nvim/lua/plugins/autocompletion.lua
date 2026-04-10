@@ -63,13 +63,49 @@
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = 'mono',
+        kind_icons = {
+          Text = '󰉿',
+          Method = 'm',
+          Function = '󰊕',
+          Constructor = '',
+          --Field = '',
+          Variable = '󰆧',
+          Class = '󰌗',
+          Interface = '',
+          Module = '',
+          Property = '',
+          Unit = '',
+          Value = '󰎠',
+          Enum = '',
+          Keyword = '󰌋',
+          Snippet = '',
+          Color = '󰏘',
+          File = '󰈙',
+          Reference = '',
+          Folder = '󰉋',
+          EnumMember = '',
+          Constant = '󰇽',
+          Struct = '',
+          Event = '',
+          Operator = '󰆕',
+          TypeParameter = '󰊄',
+        },
       },
 
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = true, auto_show_delay_ms = 500 },
-      },
+        menu = {
+          draw = {
+            columns = {
+              { "kind_icon" },
+              { "label" },
+              { "source_name" },   -- shows "lsp", "snippet", "path", etc.
+            },
+          },
+        },
+     },
 
       sources = {
         default = { 'lsp', 'path', 'snippets' },

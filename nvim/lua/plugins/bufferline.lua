@@ -3,6 +3,7 @@ return {
   dependencies = {
     'moll/vim-bbye',
     'nvim-tree/nvim-web-devicons',
+    'catppuccin/nvim', 
   },
   config = function()
     -- vim.opt.linespace = 8
@@ -56,6 +57,7 @@ return {
           bold = true,
           italic = false,
         },
+
         -- separator_selected = {},
         -- tab_selected = {},
         -- background = {},
