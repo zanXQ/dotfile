@@ -20,6 +20,15 @@
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
+      vim.lsp.config("slang-server", {
+        cmd = { "/home/osboxes/App/slang-server" },
+        filetypes = { "systemverilog", "verilog" },
+        root_markers = { ".git", ".slang" },
+        single_file_support = true,
+      })
+
+      vim.lsp.enable("slang-server")
+      vim.lsp.inlay_hint.enable(true)
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -123,13 +132,13 @@
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
 
-        verible = {
-            ---@brief
-            ---@type vim.lsp.Config
-            cmd = { 'verible-verilog-ls' },
-            filetypes = { 'systemverilog', 'verilog' },
-            root_markers = { '.git' }
-        },
+        --verible = {
+        --    ---@brief
+        --    ---@type vim.lsp.Config
+        --    cmd = { 'verible-verilog-ls' },
+        --    filetypes = { 'systemverilog', 'verilog' },
+        --    root_markers = { '.git' }
+        --},
       }
 
       -- Ensure the servers and tools above are installed
